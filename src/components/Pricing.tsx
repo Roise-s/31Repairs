@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-type Category = "all" | "branding" | "design" | "marketing" | "development";
+type Category = "all" | "iphone-battery" | "iphone-screen" | "iphone-back-glass" | "others";
 
 interface PortfolioCardProps {
   showCard: Category;
@@ -51,7 +51,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
 };
 
 const Portfolio: React.FC = () => {
-  const [showCard, setShowCard] = useState<Category>("all");
+  const [showCard, setShowCard] = useState<Category>("iphone-battery");
 
   const handleProject = (category: Category) => {
     setShowCard(category);
@@ -63,15 +63,11 @@ const Portfolio: React.FC = () => {
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-              <span className="text-primary mb-2 block text-lg font-semibold">
-                Our Portfolio
-              </span>
               <h2 className="text-dark mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]">
-                Our Recent Projects
+                Our Services
               </h2>
               <p className="text-body-color text-base dark:text-dark-6">
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                Select the type of replacement you want for your phone so we can understand how to best assist you.
               </p>
             </div>
           </div>
@@ -81,7 +77,7 @@ const Portfolio: React.FC = () => {
         <div className="w-full flex flex-wrap justify-center -mx-4">
           <div className="w-full px-4">
             <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-              {(["all", "branding", "design", "marketing", "development"] as Category[]).map(
+              {(["iphone-battery", "iphone-screen", "iphone-back-glass", "others"] as Category[]).map(
                 (cat) => (
                   <li key={cat} className="mb-1">
                     <button
@@ -93,7 +89,7 @@ const Portfolio: React.FC = () => {
                       }`}
                     >
                       {cat === "all"
-                        ? "All Projects"
+                        ? ""
                         : cat.charAt(0).toUpperCase() + cat.slice(1)}
                     </button>
                   </li>
@@ -107,7 +103,7 @@ const Portfolio: React.FC = () => {
         <div className="flex flex-wrap -mx-4">
           <PortfolioCard
             ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-01.jpg"
-            category="Branding"
+            category="iphone-battery"
             title="Creative Agency"
             button="View Details"
             buttonHref="#"
@@ -115,15 +111,7 @@ const Portfolio: React.FC = () => {
           />
           <PortfolioCard
             ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-06.jpg"
-            category="marketing"
-            title="Creative Agency"
-            button="View Details"
-            buttonHref="#"
-            showCard={showCard}
-          />
-          <PortfolioCard
-            ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-02.jpg"
-            category="marketing"
+            category="iphone-back-glass"
             title="Creative Agency"
             button="View Details"
             buttonHref="#"
@@ -131,7 +119,7 @@ const Portfolio: React.FC = () => {
           />
           <PortfolioCard
             ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-03.jpg"
-            category="Development"
+            category="others"
             title="Creative Agency"
             button="View Details"
             buttonHref="#"
@@ -139,15 +127,7 @@ const Portfolio: React.FC = () => {
           />
           <PortfolioCard
             ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-04.jpg"
-            category="Design"
-            title="Creative Agency"
-            button="View Details"
-            buttonHref="#"
-            showCard={showCard}
-          />
-          <PortfolioCard
-            ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-05.jpg"
-            category="Marketing"
+            category="iphone-screen"
             title="Creative Agency"
             button="View Details"
             buttonHref="#"
