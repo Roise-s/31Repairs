@@ -1,23 +1,16 @@
 import React, { useState } from "react";
+import PriceTable from "./PriceTable";
 
 type Category = "all" | "iphone-battery" | "iphone-screen" | "iphone-back-glass" | "others";
 
 interface PortfolioCardProps {
   showCard: Category;
   category: string;
-  ImageHref: string;
-  title: string;
-  button: string;
-  buttonHref: string;
 }
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({
   showCard,
   category,
-  ImageHref,
-  title,
-  button,
-  buttonHref,
 }) => {
   return (
     <div
@@ -27,25 +20,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
           : "hidden"
       }`}
     >
-      <div className="relative mb-12">
-        <div className="overflow-hidden rounded-[10px]">
-          <img src={ImageHref} alt="portfolio" className="w-full" />
-        </div>
-        <div className="relative z-10 mx-7 -mt-20 rounded-lg bg-white dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
-          <span className="text-primary mb-2 block text-sm font-medium">
-            {category}
-          </span>
-          <h3 className="text-dark dark:text-white mb-5 text-xl font-bold">
-            {title}
-          </h3>
-          <a
-            href={buttonHref}
-            className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
-          >
-            {button}
-          </a>
-        </div>
-      </div>
+      <PriceTable />
     </div>
   );
 };
@@ -67,7 +42,7 @@ const Portfolio: React.FC = () => {
                 Our Services
               </h2>
               <p className="text-body-color text-base dark:text-dark-6">
-                Select the type of replacement you want for your phone so we can understand how to best assist you.
+                See what price, the type of replacement you want for your phone so we can understand how to best assist you.
               </p>
             </div>
           </div>
@@ -102,35 +77,19 @@ const Portfolio: React.FC = () => {
         {/* Cards */}
         <div className="flex flex-wrap -mx-4">
           <PortfolioCard
-            ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-01.jpg"
             category="iphone-battery"
-            title="Creative Agency"
-            button="View Details"
-            buttonHref="#"
             showCard={showCard}
           />
           <PortfolioCard
-            ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-06.jpg"
             category="iphone-back-glass"
-            title="Creative Agency"
-            button="View Details"
-            buttonHref="#"
             showCard={showCard}
           />
           <PortfolioCard
-            ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-03.jpg"
             category="others"
-            title="Creative Agency"
-            button="View Details"
-            buttonHref="#"
             showCard={showCard}
           />
           <PortfolioCard
-            ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-04.jpg"
             category="iphone-screen"
-            title="Creative Agency"
-            button="View Details"
-            buttonHref="#"
             showCard={showCard}
           />
         </div>
