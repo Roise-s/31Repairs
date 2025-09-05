@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PriceTable from "./PriceTable";
 import PriceS from "./PriceS";
+import PriceB from "./PriceBack";
 
 type Category = "all" | "iphone-battery" | "iphone-screen" | "iphone-back-glass" | "others";
 
@@ -18,6 +19,8 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       return <PriceTable />
     } else if (category === "iphone-screen") {
       return <PriceS />
+    } else if (category === "iphone-back-glass") {
+      return <PriceB />
     }
   }
   return (
