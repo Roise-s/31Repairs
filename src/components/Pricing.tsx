@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PriceTable from "./PriceTable";
+import PriceS from "./PriceS";
 
 type Category = "all" | "iphone-battery" | "iphone-screen" | "iphone-back-glass" | "others";
 
@@ -12,6 +13,13 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
   showCard,
   category,
 }) => {
+  const Tablearea = (category: string) => {
+    if (category === "iphone-battery") {
+      return <PriceTable />
+    } else if (category === "iphone-screen") {
+      return <PriceS />
+    }
+  }
   return (
     <div
       className={`w-full px-4 md:w-1/2 xl:w-1/3 ${
@@ -20,7 +28,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
           : "hidden"
       }`}
     >
-      <PriceTable />
+      {Tablearea(category)}
     </div>
   );
 };
@@ -75,7 +83,7 @@ const Portfolio: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="flex flex-wrap -mx-4">
+        <div className="flex flex-wrap justify-center -mx-4">
           <PortfolioCard
             category="iphone-battery"
             showCard={showCard}

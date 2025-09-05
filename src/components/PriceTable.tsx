@@ -20,11 +20,11 @@ const PriceTable = () => {
         {Number: "iPhone 12 Pro Max", Pula: "P850"},
         {Number: "iPhone 13", Pula: "P800"},
         {Number: "iPhone 13 Pro", Pula: "P850"},
-        {Number: "iPhone 13 Pro Max", Pula: "P1000"},
+        {Number: "iPhone 13 Pro Max", Pula: "P1 000"},
         {Number: "iPhone 14", Pula: "P950"},
         {Number: "iPhone 14 Pro", Pula: "P950"},
-        {Number: "iPhone 14 Pro Max", Pula: "P1200"},
-        {Number: "iPhone 15", Pula: "P1100"},
+        {Number: "iPhone 14 Pro Max", Pula: "P1 200"},
+        {Number: "iPhone 15", Pula: "P1 100"},
     ]
 
   return (
