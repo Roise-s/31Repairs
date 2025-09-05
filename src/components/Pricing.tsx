@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PriceTable from "./PriceTable";
 import PriceS from "./PriceS";
 import PriceB from "./PriceBack";
+import OthersPage from "./OthersPage";
 
 type Category = "all" | "iphone-battery" | "iphone-screen" | "iphone-back-glass" | "others";
 
@@ -21,6 +22,8 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       return <PriceS />
     } else if (category === "iphone-back-glass") {
       return <PriceB />
+    } else {
+      return <OthersPage />
     }
   }
   return (
